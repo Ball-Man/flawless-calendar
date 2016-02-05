@@ -4,6 +4,8 @@ _fl_yeard = 364
 _fl_leapd = 371
 _fl_monthl = 28
 
+flawless_months = ["Mindo", "Taddio", "Neledio", "Canadio", "Lebenico", "Enegrio", "Odo", "Tolote", "Nederio", "Caerio", "Minigio", "Uiugio", "Panio"]
+
 def is_fl_leap(y):
     return (y%5==0 and y%40!=0) or (y%400==0 and y%68170!=0) or y%876960==0
 
