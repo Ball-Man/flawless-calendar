@@ -6,12 +6,15 @@ _fl_monthl = 28
 
 flawless_months = ["Mindo", "Taddio", "Neledio", "Canadio", "Lebenico", "Enegrio", "Odo", "Tolote", "Nederio", "Caerio", "Minigio", "Uiugio", "Panio"]
 
+#y: int
 def is_fl_leap(y):
     return (y%5==0 and y%40!=0) or (y%400==0 and y%68170!=0) or y%876960==0
 
+#y: int
 def fl_length(y):
     return _fl_leapd if is_fl_leap(y) else _fl_yeard
 
+#now: datetime.datetime
 def greg2flawless(now):
     global _fl_yeard
     global _fl_leapd
