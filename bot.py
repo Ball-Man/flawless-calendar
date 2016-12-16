@@ -10,9 +10,12 @@ updater = Updater(token=Token)
 dispatcher = updater.dispatcher
 
 def now_handler(bot, update):
-	fl_today = g2f(datetime.now().date())
-	text = "It's the %dth day of %s(%d) %d."%(fl_today[2], flawless_months[fl_today[1]], fl_today[1], fl_today[0])
-	bot.sendMessage(chat_id=update.message.chat_id, text=text)
+	try:
+		fl_today = g2f(datetime.now().date())
+		text = "It's the %dth day of %s(%d) %d."%(fl_today[2], flawless_months[fl_today[1]], fl_today[1], fl_today[0])
+		bot.sendMessage(chat_id=update.message.chat_id, text=text)
+	except Exception as ex:
+		print(ex)
 
 def help_handler(bot, update):
 	text = "This bot converts a gregorian date into a flawless date(a particular calendar based on regular months and years)"
