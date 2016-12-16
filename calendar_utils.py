@@ -33,7 +33,7 @@ def greg2flawless(now):
         day += (month-12)*_fl_monthl
         month = 12
     
-    return year, month+1, day+1
+    return [year, month+1, day+1]
 
 if __name__ == "__main__":
     input("trash")
