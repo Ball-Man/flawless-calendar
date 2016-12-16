@@ -12,7 +12,7 @@ dispatcher = updater.dispatcher
 def now_handler(bot, update):
 	try:
 		fl_today = g2f(datetime.now().date())
-		text = "It's the %dth day of %s(%d) %d."%(fl_today[2], flawless_months[fl_today[1]], fl_today[1], fl_today[0])
+		text = "It's the %dth day of %s(%d) %d."%(fl_today[2], flawless_months[fl_today[1]-1], fl_today[1], fl_today[0])
 		bot.sendMessage(chat_id=update.message.chat_id, text=text)
 	except Exception as ex:
 		print(ex)
